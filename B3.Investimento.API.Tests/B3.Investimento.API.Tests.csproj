@@ -79,12 +79,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\CdbControllerTest.cs" />
+    <Compile Include="Models\RequestsTest\InvestimentoRequestTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\CdbServiceTest\Calcular.cs" />
-    <Compile Include="Services\CdbServiceTest\CalcularImposto.cs" />
-    <Compile Include="Services\CdbServiceTest\CalcularValorTotalBruto.cs" />
-    <Compile Include="Services\CdbServiceTest\CalcularValorTotalLiquido.cs" />
-    <Compile Include="Services\CdbServiceTest\RetornaTaxaImposto.cs" />
+    <Compile Include="Services\CdbServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

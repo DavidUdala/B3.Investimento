@@ -12,14 +12,14 @@
         public double ValorMonetario { get; private set; }
         public int PrazoEmMeses { get; private set; }
 
-        private bool ValidaValorMonetario()
+        protected bool ValidaValorMonetario()
         {
             if (this.ValorMonetario < 0)
                 return false;
             return true;
         }
 
-        private bool ValidaPrazoEmMeses()
+        protected bool ValidaPrazoEmMeses()
         {
             if (this.PrazoEmMeses < 1)
                 return false;
