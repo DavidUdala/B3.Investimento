@@ -8,6 +8,7 @@ namespace B3.Investimento.API
     {
         protected void Application_Start()
         {
+            UnityConfig.RegisterComponents();
             GlobalConfiguration.Configure(WebApiConfig.Register);
         }
         protected void Application_BeginRequest(object sender, EventArgs e)
