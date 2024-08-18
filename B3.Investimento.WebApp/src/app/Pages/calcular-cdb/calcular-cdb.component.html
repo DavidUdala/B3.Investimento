@@ -1,20 +1,27 @@
-<mat-card>
-  <mat-card-content>
-    <form (ngSubmit)="onSubmit()">
-      <mat-form-field>
-        <mat-label>Valor Monetário</mat-label>
-        <input matInput />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Prazo (meses)</mat-label>
-        <input matInput />
-      </mat-form-field>
+<section class="section-calcularCdb">
+  <mat-card>
+    <h3 class="section-calcularCdb-titulo">Simular CDB</h3>
 
-      <button type="submit" mat-raised-button color="primary">Simular</button>
-    </form>
-  </mat-card-content>
-</mat-card>
-
+    <mat-card-content>
+      <form class="formCdbCalculator" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+          <mat-label>Valor Monetário</mat-label>
+          <input matInput />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Prazo (meses)</mat-label>
+          <input matInput />
+        </mat-form-field>
+        <div class="actions">
+          <button mat-raised-button routerLink="/">Voltar</button>
+          <button type="submit" mat-raised-button color="primary">
+            Simular
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</section>
 <!-- <div>
   <form  (ngSubmit)="onSubmit()">
     <div>
