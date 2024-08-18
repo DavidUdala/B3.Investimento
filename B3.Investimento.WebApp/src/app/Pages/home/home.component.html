@@ -1,0 +1,39 @@
+<mat-toolbar>
+  <img
+    src="https://s3-symbol-logo.tradingview.com/b3-on-nm--big.svg"
+    alt="Logo B3"
+    class="logo"
+  />
+  <button
+    mat-icon-button
+    (click)="sidenav.toggle()"
+    class="menu-button-mobile"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div class="desktop-menu">
+    <button class="desktop-menu-item" mat-button>
+      Investimento
+    </button>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="side" [opened]="false">
+    <mat-menu #menuMobile="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="subMenuInvestimento">
+        Investimento
+      </button>
+    </mat-menu>
+    <mat-menu #subMenuInvestimento="matMenu">
+      <button mat-menu-item>CDB</button>
+    </mat-menu>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <!-- O conteúdo principal da sua aplicação vai aqui -->
+    <div class="content">
+      <p>Conteúdo principal da aplicação</p>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
