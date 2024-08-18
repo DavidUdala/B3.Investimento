@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <img
+      src="https://s3-symbol-logo.tradingview.com/b3-on-nm--big.svg"
+      alt="Logo B3"
+      class="logo"
+      routerLink="/"
+    />
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <span>Investimentos</span>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="submenuCdb">
+    <span>CDB</span>
+  </button>
+</mat-menu>
+
+<mat-menu #submenuCdb="matMenu">
+  <button routerLink="/calcularCdb" mat-menu-item>Calcular CDB</button>
+</mat-menu>
