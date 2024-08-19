@@ -1,4 +1,3 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +18,20 @@ import { CalcularCdbComponent } from './Pages/calcular-cdb/calcular-cdb.componen
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
+import { NgModule } from '@angular/core';
+import { CURRENCY_MASK_CONFIG, CurrencyMaskConfig, CurrencyMaskModule } from 'ng2-currency-mask';
+
+
+export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
+  align: "left",
+  allowNegative: false,
+  decimal: ",",
+  precision: 2,
+  prefix: "",
+  suffix: "",
+  thousands: "."
+};
 
 @NgModule({
   declarations: [
@@ -41,9 +54,14 @@ import { MatCardModule } from '@angular/material/card';
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxMaskDirective,
+    NgxMaskPipe,
+    CurrencyMaskModule,
   ],
-  providers: [],
+  providers: [
+    { provide: CURRENCY_MASK_CONFIG, useValue: CustomCurrencyMaskConfig }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,18 +7,25 @@
         <mat-form-field>
           <mat-label>Valor Monetário</mat-label>
           <mat-icon matPrefix>attach_money</mat-icon>
-          <input matInput formControlName="valorMonetario" />
+          <input
+            currencyMask
+            type="text"
+            matInput
+            formControlName="valorMonetario"
+          />
         </mat-form-field>
         <mat-form-field>
           <mat-label>Prazo (meses)</mat-label>
           <mat-icon matPrefix>calendar_today</mat-icon>
-          <input matInput formControlName="prazoEmMeses" />
+          <input
+            type="number"
+            matInput
+            formControlName="prazoEmMeses"
+            />
         </mat-form-field>
         <div class="actions">
           <button mat-raised-button routerLink="/">Voltar</button>
-          <a mat-raised-button color="primary" (click)="Simular()">
-            Simular
-          </a>
+          <a mat-raised-button color="primary" (click)="Simular()"> Simular </a>
         </div>
       </form>
     </mat-card-content>

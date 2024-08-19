@@ -10,7 +10,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalcularCdbComponent implements OnInit {
   calcularCdbForm!: FormGroup;
-  result: { gross: number, net: number } | null = null;
 
   constructor(private fb: FormBuilder, private cdbService: CdbService) { }
 
@@ -23,14 +22,12 @@ export class CalcularCdbComponent implements OnInit {
 
   Simular() {
     const request: InvestimentoRequest = this.calcularCdbForm.value;
-
-
     this.cdbService.SimulacaoResgateAplicacao(request).subscribe({
       next: (value) => {
-        console.log('Cadastro realizado com sucesso', value);
+        console.log('Simulação realizada com sucesso', value);
       },
       error: (err) => {
-        console.log('Erro ao realizar cadastro', err)
+        console.log('Erro ao realizar simulação', err)
       }
     });
   }
