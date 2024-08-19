@@ -3,41 +3,24 @@
     <h3 class="section-calcularCdb-titulo">Simular CDB</h3>
 
     <mat-card-content>
-      <form class="formCdbCalculator" (ngSubmit)="onSubmit()">
+      <form [formGroup]="calcularCdbForm" class="formCdbCalculator">
         <mat-form-field>
           <mat-label>Valor Monetário</mat-label>
-          <input matInput />
+          <mat-icon matPrefix>attach_money</mat-icon>
+          <input matInput formControlName="valorMonetario" />
         </mat-form-field>
         <mat-form-field>
           <mat-label>Prazo (meses)</mat-label>
-          <input matInput />
+          <mat-icon matPrefix>calendar_today</mat-icon>
+          <input matInput formControlName="prazoEmMeses" />
         </mat-form-field>
         <div class="actions">
           <button mat-raised-button routerLink="/">Voltar</button>
-          <button type="submit" mat-raised-button color="primary">
+          <a mat-raised-button color="primary" (click)="Simular()">
             Simular
-          </button>
+          </a>
         </div>
       </form>
     </mat-card-content>
   </mat-card>
 </section>
-<!-- <div>
-  <form  (ngSubmit)="onSubmit()">
-    <div>
-      <label for="amount">Valor Monetário:</label>
-      <input id="amount" formControlName="amount" type="number" step="0.01">
-    </div>
-    <div>
-      <label for="months">Prazo (meses):</label>
-      <input id="months" formControlName="months" type="number">
-    </div>
-    <button type="submit" [disabled]="investmentForm.invalid">Enviar</button>
-  </form>
-
-  <div *ngIf="result">
-    <h3>Resultado do Investimento:</h3>
-    <p>Resultado Bruto: {{ result.gross | currency }}</p>
-    <p>Resultado Líquido: {{ result.net | currency }}</p>
-  </div>
-</div> -->

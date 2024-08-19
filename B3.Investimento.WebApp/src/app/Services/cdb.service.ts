@@ -14,6 +14,9 @@ export class CdbService {
   constructor(private httpClient: HttpClient) { }
 
   SimulacaoResgateAplicacao(investimentoRequest : InvestimentoRequest): Observable<InvestimentoResponse> {
-    return this.httpClient.post<any>(this.apiUrl + "/api/Cdb/SimulacaoResgateAplicacao", investimentoRequest)
+
+    return this.httpClient.post<InvestimentoResponse>(`${this.apiUrl}/api/Cdb/SimulacaoResgateAplicacao`, investimentoRequest)
   }
+
+
 }
