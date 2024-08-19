@@ -13,25 +13,32 @@
             matInput
             formControlName="valorMonetario"
           />
+          <mat-error
+            *ngIf="calcularCdbForm.get('valorMonetario')?.errors?.['required']"
+          >
+            O valor monetário é obrigatório.
+          </mat-error>
         </mat-form-field>
         <mat-form-field>
           <mat-label>Prazo (meses)</mat-label>
           <mat-icon matPrefix>calendar_today</mat-icon>
-          <input
-            type="number"
-            matInput
-            formControlName="prazoEmMeses"
-            />
+          <input type="number" matInput formControlName="prazoEmMeses" />
+          <mat-error
+            *ngIf="calcularCdbForm.get('prazoEmMeses')?.errors?.['required']"
+          >
+            O prazo em meses é obrigatório.
+          </mat-error>
+          <mat-error
+            *ngIf="calcularCdbForm.get('prazoEmMeses')?.errors?.['min']"
+          >
+            O prazo deve ser maior que 1 mês.
+          </mat-error>
         </mat-form-field>
         <div class="actions">
           <button mat-raised-button routerLink="/">Voltar</button>
-          <a mat-raised-button color="primary" (click)="Simular()"> Simular </a>
+          <a mat-raised-button color="primary" (click)="simular()"> Simular </a>
         </div>
       </form>
     </mat-card-content>
   </mat-card>
-
-
 </section>
-
-

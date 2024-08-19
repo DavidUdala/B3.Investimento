@@ -22,16 +22,18 @@ export class CalcularCdbComponent implements OnInit {
     })
   }
 
-  Simular() {
-    const request: InvestimentoRequest = this.calcularCdbForm.value;
-    this.cdbService.SimulacaoResgateAplicacao(request).subscribe({
-      next: (response) => {
-         this.openModal(response.ValorTotalBruto, response.ValorTotalLiquido);
-      },
-      error: (err) => {
-        console.log('Erro ao realizar simulação', err)
-      }
-    });
+  simular() {
+    if (this.calcularCdbForm.valid) {
+      const request: InvestimentoRequest = this.calcularCdbForm.value;
+      this.cdbService.SimulacaoResgateAplicacao(request).subscribe({
+        next: (response) => {
+          this.openModal(response.ValorTotalBruto, response.ValorTotalLiquido);
+        },
+        error: (err) => {
+          console.log('Erro ao realizar simulação', err)
+        }
+      });
+    }
   }
 
   openModal(valorBruto: number, valorLiquido: number) {
