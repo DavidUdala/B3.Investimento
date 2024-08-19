@@ -4,6 +4,6 @@ export interface InvestimentoRequest{
 }
 
 export interface InvestimentoResponse {
-   valorTotalBruto: number,
-   valorTotalLiquido: number
+   ValorTotalBruto: number,
+   ValorTotalLiquido: number
 }

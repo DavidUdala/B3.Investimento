@@ -14,13 +14,17 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MenuNavegacaoComponent } from './Componentes/Shared/menu-navegacao/menu-navegacao.component';
 import { MatTreeModule } from '@angular/material/tree';
-import { CalcularCdbComponent } from './Pages/calcular-cdb/calcular-cdb.component';
+import { CalcularCdbComponent } from './Componentes/Shared/calcular-cdb/calcular-cdb.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import {MatDialogModule} from '@angular/material/dialog';
+
 import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
 import { NgModule } from '@angular/core';
 import { CURRENCY_MASK_CONFIG, CurrencyMaskConfig, CurrencyMaskModule } from 'ng2-currency-mask';
+import { ResultadoInvestimentoComponent } from './Componentes/Shared/resultado-investimento/resultado-investimento.component';
+import { CdbComponent } from './Pages/cdb/cdb.component';
 
 
 export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
@@ -39,6 +43,8 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     HomeComponent,
     MenuNavegacaoComponent,
     CalcularCdbComponent,
+    ResultadoInvestimentoComponent,
+    CdbComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +64,7 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     NgxMaskDirective,
     NgxMaskPipe,
     CurrencyMaskModule,
+    MatDialogModule
   ],
   providers: [
     { provide: CURRENCY_MASK_CONFIG, useValue: CustomCurrencyMaskConfig }

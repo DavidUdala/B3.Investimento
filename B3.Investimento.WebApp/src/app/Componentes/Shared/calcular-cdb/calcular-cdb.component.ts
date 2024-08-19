@@ -1,7 +1,9 @@
-import { InvestimentoRequest, InvestimentoResponse } from './../../Models/Investimento';
+import { InvestimentoRequest } from '../../../Models/Investimento';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CdbService } from './../../Services/cdb.service';
+import { CdbService } from '../../../Services/cdb.service';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ResultadoInvestimentoComponent } from 'src/app/Componentes/Shared/resultado-investimento/resultado-investimento.component';
 
 @Component({
   selector: 'app-calcular-cdb',
@@ -11,7 +13,7 @@ import { Component, OnInit } from '@angular/core';
 export class CalcularCdbComponent implements OnInit {
   calcularCdbForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private cdbService: CdbService) { }
+  constructor(private fb: FormBuilder, private cdbService: CdbService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.calcularCdbForm = this.fb.group({
@@ -23,11 +25,20 @@ export class CalcularCdbComponent implements OnInit {
   Simular() {
     const request: InvestimentoRequest = this.calcularCdbForm.value;
     this.cdbService.SimulacaoResgateAplicacao(request).subscribe({
-      next: (value) => {
-        console.log('Simulação realizada com sucesso', value);
+      next: (response) => {
+         this.openModal(response.ValorTotalBruto, response.ValorTotalLiquido);
       },
       error: (err) => {
         console.log('Erro ao realizar simulação', err)
+      }
+    });
+  }
+
+  openModal(valorBruto: number, valorLiquido: number) {
+    this.dialog.open(ResultadoInvestimentoComponent, {
+      data: {
+        valorTotalBruto: valorBruto,
+        valorTotalLiquido: valorLiquido
       }
     });
   }

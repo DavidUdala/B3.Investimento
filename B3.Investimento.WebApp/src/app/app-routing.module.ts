@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './Pages/home/home.component';
-import { CalcularCdbComponent } from './Pages/calcular-cdb/calcular-cdb.component';
+import { CalcularCdbComponent } from './Componentes/Shared/calcular-cdb/calcular-cdb.component';
+import { CdbComponent } from './Pages/cdb/cdb.component';
 
 const routes: Routes = [
   {
@@ -9,8 +10,8 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'calcularCdb',
-    component: CalcularCdbComponent
+    path: 'cdb',
+    component: CdbComponent
   }
 ];
 

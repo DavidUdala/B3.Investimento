@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-menu-navegacao',
@@ -6,9 +6,6 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./menu-navegacao.component.scss']
 })
 export class MenuNavegacaoComponent {
-  @Output() toggleSidenav = new EventEmitter<void>();
 
-  onToggleSidenav() {
-    this.toggleSidenav.emit();
-  }
+
 }

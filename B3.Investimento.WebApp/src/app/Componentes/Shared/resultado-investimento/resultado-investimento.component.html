@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Resultado da Simulação</h1>
+<div mat-dialog-content>
+  <p>
+    <strong>Valor Bruto:</strong>
+    {{ data.valorTotalBruto | currency:'BRL' :'symbol':'1.2-2' }}
+  </p>
+  <p>
+    <strong>Valor Líquido:</strong>
+    {{ data.valorTotalLiquido | currency:'BRL' :'symbol':'1.2-2' }}
+  </p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Fechar</button>
+</div>
