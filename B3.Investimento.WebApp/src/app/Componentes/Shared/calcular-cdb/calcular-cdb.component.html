@@ -16,7 +16,12 @@
           <mat-error
             *ngIf="calcularCdbForm.get('valorMonetario')?.errors?.['required']"
           >
-            O valor monetário é obrigatório.
+          O valor é obrigatório.
+          </mat-error>
+          <mat-error
+            *ngIf="calcularCdbForm.get('valorMonetario')?.errors?.['min']"
+          >
+          O valor deve ser maior que 0.
           </mat-error>
         </mat-form-field>
         <mat-form-field>
@@ -26,12 +31,12 @@
           <mat-error
             *ngIf="calcularCdbForm.get('prazoEmMeses')?.errors?.['required']"
           >
-            O prazo em meses é obrigatório.
+            O prazo é obrigatório.
           </mat-error>
           <mat-error
             *ngIf="calcularCdbForm.get('prazoEmMeses')?.errors?.['min']"
           >
-            O prazo deve ser maior que 1 mês.
+          O prazo deve ser maior que 1 mês.
           </mat-error>
         </mat-form-field>
         <div class="actions">

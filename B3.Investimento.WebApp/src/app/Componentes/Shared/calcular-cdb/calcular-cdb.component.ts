@@ -17,8 +17,8 @@ export class CalcularCdbComponent implements OnInit {
 
   ngOnInit(): void {
     this.calcularCdbForm = this.fb.group({
-      valorMonetario: [null, Validators.required],
-      prazoEmMeses: [null, Validators.required]
+      valorMonetario: [null, [Validators.required, Validators.min(0.01)]],
+      prazoEmMeses: [null, [Validators.required, Validators.min(2)]]
     })
   }
 
