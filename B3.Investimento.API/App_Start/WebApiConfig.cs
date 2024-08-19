@@ -1,4 +1,5 @@
 ﻿using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace B3.Investimento.API
 {
@@ -7,7 +8,8 @@ namespace B3.Investimento.API
         public static void Register(HttpConfiguration config)
         {
             // Configuração e serviços de API Web
-
+            var cors = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(cors);
             // Rotas de API Web
             config.MapHttpAttributeRoutes();
 

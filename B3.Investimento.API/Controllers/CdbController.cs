@@ -12,7 +12,7 @@ namespace B3.Investimento.API.Controllers
         {
             _cdbService = cdbService;
         }
-
+        [HttpPost]
         public IHttpActionResult SimulacaoResgateAplicacao([FromBody]InvestimentoRequest request)
         {
             if (!request.Validar())
@@ -22,5 +22,6 @@ namespace B3.Investimento.API.Controllers
 
             return Ok(result);
         }
+
     }
 }
